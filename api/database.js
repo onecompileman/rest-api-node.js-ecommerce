@@ -10,6 +10,8 @@ const con = mysql.createConnection({
     database: process.env.DB_NAME
 });
 
-console.log(con);
+con.connect((err) => {
+  if (err) throw err;
+});
 
 module.exports = con;
